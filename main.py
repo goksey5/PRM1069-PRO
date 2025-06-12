@@ -17,6 +17,11 @@ async def on_ready():
 async def hello(ctx):
     await ctx.send(f'Merhaba! Ben {bot.user}, bir Discord sohbet botuyum!')
 
+@bot.command()
+async def repeat(ctx, times: int, content='repeating...'):
+    """Repeats a message multiple times."""
+    for i in range(times):
+        await ctx.send(content)
 
 
 @bot.command()
